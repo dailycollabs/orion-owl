@@ -1,0 +1,48 @@
+<div class="report-title">/*{{ label }}*/</div>
+<div class="report-sub-title">record data /*{{ label }}*/</div>
+<table class="data">
+        <thead>
+                <tr class="column-name">
+                        <th style="width:20px">#</th>
+                        /*{%~ set i = 1 %}*/
+                        /*{%~ for value in column %}*/
+                        /*{%~ if value.type.type in ['rid', 'system_log'] %}*/
+                        /*{%~ else %}*/
+                        <th>/*{{ value.label }}*/</th>
+                        /*{%~ set i = i + 1 %}*/
+                        /*{%~ endif %}*/
+                        /*{%~ endfor %}*/
+                </tr>
+                <tr class="column-no">
+                        /*{%~ for j in range(low=1, high=i, step=1) %}*/
+                        <th class="text-center">/*{{ j }}*/</th>
+                        /*{%~ endfor %}*/
+                </tr>
+        </thead>
+        <tbody>
+                /*{% set i = 1 %}*/
+                /*{% for data in data %}*/
+                <tr>
+                        <td class="text-center">/*{{ i }}*/</td>
+                        /*{%~ for value in column %}*/
+                        /*{%~ if value.type.type in ['rid', 'system_log'] %}*/
+                        /*{%~ elseif value.type.type in ['int', 'tinyint', 'bigint'] %}*/
+                        <td class="text-right">/*{{ attribute(data, value.name) }}*/</td>
+                        /*{%~ elseif value.type.type in ['decimal'] %}*/
+                        <td class="text-right">/*{{ attribute(data, value.name) }}*/</td>
+                        /*{%~ elseif value.type.type in ['text'] %}*/
+                        <td>/*{{ attribute(data, value.name) }}*/</td>
+                        /*{%~ elseif value.type.type in ['autocomplete'] %}*/
+                        <td>/*{{ attribute(data, value.name) }}*/</td>
+                        /*{%~ elseif value.type.type in ['file'] %}*/
+                        /*{% set f = attribute(data, 'f_' ~ value.name)|json_decode %}*/
+                        <td>/*{{ attribute(f, 'original_name') }}*/</td>
+                        /*{%~ else %}*/
+                        <td>/*{{ attribute(data, value.name) }}*/</td>
+                        /*{%~ endif %}*/
+                        /*{%~ endfor %}*/
+                </tr>
+                /*{% set i = i + 1 %}*/
+                /*{% endfor %}*/
+        </tbody>
+</table>

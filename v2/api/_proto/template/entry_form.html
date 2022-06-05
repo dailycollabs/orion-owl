@@ -1,0 +1,116 @@
+<div class="entry-form card rounded-0">
+    <div class="card-header text-bold rounded-0"></div>
+    <div class="card-body border">
+        <form>
+            /*{%~ for value in column %}*/
+            /*{%~ if value.type.type in ['rid', 'system_log', 'system'] %}*/
+            /*{%~ else %}*/
+            <div class="form-group row mb-1">
+                <label class="col-sm-4 col-md-3 col-lg-2 py-1">/*{{ value.label }}*/ :</label>
+                /*{%~ if value.type.type in ['enum'] %}*/
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <select name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="/*{{ value.label }}*/">
+                        /*{%~ for enum_val in value.type.value %}*/
+                        <option value="/*{{ enum_val }}*/">/*{{ enum_val }}*/</option>
+                        /*{%~ endfor %}*/
+                    </select>
+                </div>
+                /*{%~ elseif value.type.type in ['date'] %}*/
+                <div class="col-8 col-sm-4 col-lg-2">
+                    <div class="input-group input-group-sm btn-group-sm">
+                        <input type="text" name="/*{{ value.name }}*/" class="date form-control rounded-0"
+                            placeholder="yyyy-mm-dd">
+                        <button type="button" tabindex="-1" class="btn-date btn btn-flat">
+                            <i class="fa fa-fw fa-calendar"></i>
+                        </button>
+                    </div>
+                </div>
+                /*{%~ elseif value.type.type in ['time'] %}*/
+                <div class="col-4 col-sm-2 col-lg-1">
+                    <input type="text" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="hh:mm">
+                </div>
+                /*{%~ elseif value.type.type in ['datetime'] %}*/
+                <div class="col-8 col-sm-4 col-lg-2">
+                    <div class="input-group input-group-sm btn-group-sm">
+                        <input type="text" name="/*{{ value.name }}*/[0]" class="date form-control rounded-0"
+                            placeholder="yyyy-mm-dd">
+                        <button type="button" tabindex="-1" class="btn-date btn btn-flat">
+                            <i class="fa fa-fw fa-calendar"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-2 col-lg-1">
+                    <input type="text" name="/*{{ value.name }}*/[1]" class="form-control form-control-sm rounded-0"
+                        placeholder="hh:mm">
+                </div>
+                /*{%~ elseif value.type.type in ['text'] %}*/
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <textarea name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0 mb-1"
+                        placeholder="/*{{ value.label }}*/"></textarea>
+                </div>
+                /*{%~ elseif value.type.type in ['int', 'tinyint', 'bigint'] %}*/
+                <div class="col-8 col-sm-4 col-lg-2">
+                    /*{%~ if value.type.signed == 'unsigned' %}*/
+                    <input type="number" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="/*{{ value.label }}*/" min="0">
+                    /*{%~ else %}*/
+                    <input type="number" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="/*{{ value.label }}*/">
+                    /*{%~ endif %}*/
+                </div>
+                /*{%~ elseif value.type.type in ['decimal'] %}*/
+                <div class="input-group input-group-sm col-8 col-sm-4 col-lg-2">
+                    /*{%~ if value.type.signed == 'unsigned' %}*/
+                    <input type="number" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="/*{{ value.label }}*/" step="0.01" min="0">
+                    /*{%~ else %}*/
+                    <input type="number" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="/*{{ value.label }}*/" step="0.01">
+                    /*{%~ endif %}*/
+                </div>
+                /*{%~ elseif value.type.type in ['autocomplete'] %}*/
+                /*{%~ set alias = value.name|replace({'_rid': ''}) %}*/
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <div class="input-group input-group-sm btn-group-sm">
+                        <input type="hidden" id="/*{{ value.name }}*/" name="/*{{ value.name }}*/">
+                        <input type="text" id="/*{{ alias }}*/" name="/*{{ alias }}*/"
+                            class="form-control form-control-sm rounded-0" placeholder="/*{{ value.label }}*/">
+                        <button type="button" tabindex="-1" class="btn-autocomplete btn btn-flat">
+                            <i class="fa fa-fw fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                /*{%~ elseif value.type.type in ['file'] %}*/
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <input type="file" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0">
+                </div>
+                /*{%~ elseif value.type.type in ['password'] %}*/
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <input type="password" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="/*{{ value.label }}*/">
+                </div>
+                /*{%~ else %}*/
+                <div class="col-sm-8 col-md-6 col-lg-4">
+                    <input type="text" name="/*{{ value.name }}*/" class="form-control form-control-sm rounded-0"
+                        placeholder="/*{{ value.label }}*/">
+                </div>
+                /*{%~ endif %}*/
+                /*{%~ if value.suffix != '' %}*/
+                <div class="my-1 px-0 font-italic">/*{{ value.suffix }}*/</div>
+                /*{%~ endif %}*/
+            </div>
+            /*{%~ endif %}*/
+            /*{%~ endfor %}*/
+            <div class="form-group row">
+                <div class="offset-sm-4 offset-md-3 offset-lg-2 col-sm-8">
+                    <button type="button" class="submit-entry-form btn btn-flat text-bold">
+                        <i class="fa fa-fw fa-save"></i> Save
+                    </button>
+                    <button type="button" class="cancel-entry-form btn btn-link">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

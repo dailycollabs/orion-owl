@@ -1,0 +1,31 @@
+<div class="data-detail">
+    /*{%~ for value in column %}*/
+    /*{%~ if value.type.type in ['rid', 'system_log'] %}*/
+    /*{%~ else %}*/
+    <div class="form-group row mb-1 border-bottom">
+        <label class="col-sm-6">/*{{ value.label }}*/ :</label>
+        /*{%~ if value.type.type in ['autocomplete'] %}*/
+        /*{%~ set alias = value.name|replace({'_rid': ''}) %}*/
+        <div class="col-sm-5 _/*{{ alias }}*/">
+        </div>
+        /*{%~ elseif value.type.type in ['int', 'tinyint', 'bigint', 'decimal'] %}*/
+        <div class="col-sm-5 _/*{{ value.name }}*/ text-right">
+        </div>
+        /*{%~ else %}*/
+        <div class="col-sm-5 _/*{{ value.name }}*/">
+        </div>
+        /*{%~ endif %}*/
+        /*{%~ if value.suffix != '' %}*/
+        <div class="px-0 font-italic">/*{{ value.suffix }}*/</div>
+        /*{%~ endif %}*/
+    </div>
+    /*{%~ endif %}*/
+    /*{%~ endfor %}*/
+    /*{%~ if type in ['disposisi'] %}*/
+    <div class="form-group row mb-1 border-bottom">
+        <label class="col-sm-12">Riwayat :</label>
+        <div class="col-sm-12 _disposisi">
+        </div>
+    </div>
+    /*{%~ endif %}*/
+</div>

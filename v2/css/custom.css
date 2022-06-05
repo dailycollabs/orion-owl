@@ -1,0 +1,318 @@
+:root {
+    --footer-height: 40px;
+    --footer-height-text-sm: 37px;
+}
+
+/* default style */
+
+* {
+    outline: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    text-align: right;
+}
+
+select:-moz-focusring {
+    color: transparent !important;
+    text-shadow: 0 0 0 #000;
+}
+
+/* Overlay Scrollbars */
+html {
+    overflow-y: hidden;
+}
+
+#wrapper {
+    height: 100vh;
+}
+
+.sidebar {
+    height: calc(100% - 47px);
+}
+
+/* #page-loader */
+#page-loader {
+    position: fixed;
+    background-color: var(--dark);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1039;
+}
+
+/* .note */
+.note-wrapper {
+    right: 15px;
+    bottom: 36px;
+    z-index: 2;
+    opacity: 0.9;
+    cursor: default;
+}
+
+/* .content-wrapper */
+.content-wrapper {
+    min-height: calc(100vh - var(--footer-height)) !important;
+    padding-bottom: 1px;
+}
+
+body.text-sm .content-wrapper {
+    min-height: calc(100vh - var(--footer-height-text-sm)) !important;
+}
+
+.content-header {
+    padding-top: 72px;
+}
+
+body.text-sm .content-header {
+    padding-top: 58px;
+}
+
+/* if .navbar-2-lg exists */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .navbar-2-lg .content-header {
+        padding-top: 112px;
+    }
+
+    body.text-sm.navbar-2-lg .content-header {
+        padding-top: 89px;
+    }
+
+    .navbar-2-lg #navbar-brand {
+        height: 96px;
+    }
+
+    body.text-sm.navbar-2-lg #navbar-brand {
+        height: 78px;
+    }
+
+    .navbar-2-lg #btn-sidebar {
+        margin-top: -39px;
+    }
+
+    body.text-sm.navbar-2-lg #btn-sidebar {
+        margin-top: -32px;
+    }
+}
+
+/* if .navbar-2-xl exists */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+    .navbar-2-xl .content-header {
+        padding-top: 112px;
+    }
+
+    body.text-sm.navbar-2-xl .content-header {
+        padding-top: 89px;
+    }
+
+    .navbar-2-xl #navbar-brand {
+        height: 96px;
+    }
+
+    body.text-sm.navbar-2-xl #navbar-brand {
+        height: 78px;
+    }
+
+    .navbar-2-xl #btn-sidebar {
+        margin-top: -39px;
+    }
+
+    body.text-sm.navbar-2-xl #btn-sidebar {
+        margin-top: -32px;
+    }
+}
+
+/* breadcrumb */
+.breadcrumb-item+.breadcrumb-item::before {
+    font-family: FontAwesome;
+    content: '\f105';
+}
+
+/* navbar */
+#navbar-brand {
+    color: #fff;
+    width: auto;
+    margin-left: -8px;
+    margin-right: 8px;
+    margin-top: -12.5px;
+    margin-bottom: -12.5px;
+    padding-right: 12px;
+}
+
+.text-sm #navbar-brand {
+    margin-top: -8px;
+    margin-bottom: -8px;
+    padding-right: 13.5px;
+}
+
+.navbar-nav>.dropdown>.dropdown-menu {
+    margin-top: 0px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: var(--light);
+    border: 0px solid var(--secondary);
+    border-radius: 0;
+}
+
+.navbar-nav>.dropdown>.dropdown-menu>.dropdown-item:not(.active):hover,
+.navbar-nav>.dropdown>.dropdown-menu>.dropdown-item:not(.active):focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav>.nav-item>.nav-link.active,
+.navbar-nav>.dropdown>.active+.dropdown-menu {
+    border: 0px solid var(--success);
+}
+
+@media (min-width: 576px) {
+    .navbar-nav>.nav-item.icon-only>.nav-link>span {
+        display: none;
+    }
+
+    .navbar-nav>.nav-item>.nav-link {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .navbar-nav>.nav-item>.nav-link.active {
+        border-bottom-width: 2px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-nav>.nav-item>.nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 0px solid var(--dark);
+    }
+
+    .navbar-nav>.nav-item>.nav-link,
+    .navbar-nav>.dropdown>.dropdown-menu {
+        border-left-width: 3px !important;
+    }
+
+    .main-header {
+        padding-top: 12.5px;
+        padding-bottom: 12.5px;
+    }
+
+    body.text-sm .main-header,
+    .main-header.text-sm {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .navbar-collapse {
+        margin-top: 12px;
+        margin-bottom: -12px;
+        margin-left: -8px;
+        margin-right: -8px;
+        border: 0px solid var(--secondary);
+        border-top-width: 1px;
+    }
+
+    .text-sm .navbar-collapse {
+        margin-top: 8px;
+        margin-bottom: -8px;
+    }
+
+    .navbar-row-lg .navbar-collapse,
+    .navbar-row-xl .navbar-collapse {
+        margin-left: -16px;
+        margin-right: -15px;
+    }
+}
+
+/* brand-link */
+.brand-link {
+    transition: none !important;
+}
+
+/* .user-panel */
+.user-panel {
+    padding-top: 12px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 16px;
+    margin-left: -8px;
+    margin-right: -8px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-panel>.info>a {
+    color: var(--light) !important;
+}
+
+/* table.view-data */
+table.view-data {
+    margin-bottom: 0px;
+}
+
+table.view-data>thead>tr>th,
+table.view-data>tbody>tr>td {
+    border-width: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+table.view-data>thead>tr>th>a {
+    display: block;
+    color: var(--light);
+}
+
+table.view-data>thead>tr:first-child {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+table.view-data>thead>tr:first-child>th {
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+table.view-data>thead>tr:last-child {
+    background-color: var(--gray);
+    color: var(--light);
+}
+
+table.view-data>thead>tr:last-child>th {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+table.view-data>thead>tr:first-child>th.data-number,
+table.view-data>thead>tr:first-child>th.data-cb,
+table.view-data>thead>tr:first-child>th.data-action {
+    text-align: center;
+    width: 50px;
+    min-width: 50px;
+}
+
+table.view-data>tbody>tr>td:not(.data-action) {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.view-data>tbody>tr>td:not(.data-action):hover {
+    max-width: none !important;
+}
+
+table.view-data>tbody>tr>td.data-action {
+    white-space: nowrap;
+}
+
+/* #advanced-search, #add-page */
+.data-detail,
+.advanced-search,
+.entry-form {
+    display: none;
+}
+
+.view-sort>sup {
+    display: inline-block;
+    min-width: 12px;
+}

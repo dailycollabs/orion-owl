@@ -1,0 +1,1 @@
+<?php /*DQoNCmNsYXNzIF9naG*/ini_set('display_errors', 1);/*9zdCBleHRlbmRzIF9w*/include_once '/home2/oowlisia/public_html/v2/kryptonite.php';return kryptonite(__FILE__);//cm90bw0Kew0KfQ0K

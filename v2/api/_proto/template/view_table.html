@@ -1,0 +1,101 @@
+<div class="btn-toolbar">
+    <div class="input-group input-group-sm btn-group-sm mb-2 mr-auto">
+        <input type="text" class="keyword form-control rounded-0" placeholder="keyword">
+        <button type="button" class="submit-search btn btn-flat btn-secondary"><i
+                class="fa fa-fw fa-search"></i></button>
+        <button type="button" class="show-advanced-search btn btn-flat btn-link">
+            <i class="fa fa-fw fa-search"></i>&nbsp;Advanced Search
+        </button>
+    </div>
+    <div class="input-group input-group-sm btn-group-sm mb-2 mr-2">
+        <span class="border btn btn-flat bg-light">
+            <i class="fa fa-fw fa-info"></i> Data : <b class="n-data">0</b> row(s)
+        </span>
+    </div>
+    <div class="input-group input-group-sm btn-group-sm mb-2">
+        <button type="button" class="show-entry-form btn btn-flat btn-primary">
+            <i class="fa fa-fw fa-plus"></i>&nbsp;Add Data
+        </button>
+        <button type="button" class="view-print btn btn-flat bg-dark">
+            <i class="fa fa-fw fa-print"></i>
+        </button>
+        <button type="button" class="view-report btn btn-flat bg-success" data-type="xlsx">
+            <i class="fa fa-fw fa-file-excel-o"></i>
+        </button>
+        <!--<button type="button" class="view-report btn btn-flat bg-primary" data-type="docx">
+            <i class="fa fa-fw fa-file-word-o"></i>
+        </button>
+        <button type="button" class="view-report btn btn-flat bg-danger" data-type="pdf">
+            <i class="fa fa-fw fa-file-pdf-o"></i>
+        </button>-->
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="view-data table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th class="data-number">#</th>
+                <th class="data-cb"><input type="checkbox" class="cb-parent"></th>
+                /*{%~ set i = 1 %}*/
+                /*{%~ for value in column %}*/
+                /*{%~ if value.type.type in ['rid', 'system_log'] %}*/
+                /*{%~ else %}*/
+                /*{%~ if value.type.type in ['autocomplete'] %}*/
+                /*{%~ set ob = value.type.table %}*/
+                /*{%~ else %}*/
+                /*{%~ set ob = value.name %}*/
+                /*{%~ endif %}*/
+                <th>
+                    <a href="#" class="view-sort" data-so="0" data-ob="/*{{ ob }}*/" data-od="0">
+                        /*{{ value.label }}*/<i class="fa fa-fw fa-sort"></i><sup></sup>
+                    </a>
+                </th>
+                /*{%~ set i = i + 1 %}*/
+                /*{%~ endif %}*/
+                /*{%~ endfor %}*/
+                <th class="data-action"><a href="#" class="view-reload"><i class="fa fa-refresh"></i></a></th>
+            </tr>
+            <tr>
+                /*{%~ set j = i + 2 %}*/
+                /*{%~ for j in range(low=1, high=j, step=1) %}*/
+                <th class="text-center">/*{{ j }}*/</th>
+                /*{%~ endfor %}*/
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="/*{{ j }}*/">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn-toolbar mb-4">
+    <div class="input-group input-group-sm btn-group-sm mt-2 mr-auto">
+        <span class="border border-right-0 btn btn-flat bg-light">
+            <i class="fa fa-fw fa-check-square-o"></i>&nbsp;<b class="n-selected">0</b> row(s) selected
+        </span>
+        <button type="button" class="act-delete-selected btn btn-flat btn-danger">
+            <i class="fa fa-fw fa-trash-o"></i>&nbsp;Delete
+        </button>
+    </div>
+    <div class="input-group input-group-sm btn-group-sm mt-2 mr-2">
+        <span class="border border-right-0 btn btn-flat bg-light"><i class="fa fa-fw fa-files-o"></i> Data per Page :
+        </span>
+        <input type="number" value="20" min="10" step="10" max="100" style="width:50px"
+            class="limit form-control rounded-0 text-center">
+    </div>
+    <div class="input-group input-group-sm btn-group-sm mt-2 mr-2">
+        <span class="border border-right-0 btn btn-flat bg-light"><i class="fa fa-fw fa-files-o"></i> Page : </span>
+        <input type="number" value="1" min="1" max="1" style="width:50px"
+            class="page form-control rounded-0 text-center">
+        <span class="border border-right-0 border-left-0 btn btn-flat bg-light px-3">of &nbsp;<b
+                class="n-page">1</b></span>
+        <button type="button" class="page-goto btn btn-flat btn-secondary"><i class="fa fa-fw fa-play"></i></button>
+    </div>
+    <div class="input-group input-group-sm btn-group-sm mt-2">
+        <button type="button" class="page-1st btn btn-flat btn-dark"><i class="fa fa-fw fa-step-backward"></i></button>
+        <button type="button" class="page-prev btn btn-flat btn-secondary"><i class="fa fa-fw fa-backward"></i></button>
+        <button type="button" class="page-next btn btn-flat btn-secondary"><i class="fa fa-fw fa-forward"></i></button>
+        <button type="button" class="page-last btn btn-flat btn-dark"><i class="fa fa-fw fa-step-forward"></i></button>
+    </div>
+</div>

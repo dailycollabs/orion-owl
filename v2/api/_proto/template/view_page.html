@@ -1,0 +1,155 @@
+<div class="content-header mb-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">/*{{ label }}*/</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><i class="fa fa-home"></i></li>
+                    <li class="breadcrumb-item">/*{{ label }}*/</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container-fluid">
+        /*{% include 'view_detail.html' %}*/
+        /*{% include 'view_advanced_search.html' %}*/
+        /*{% include 'entry_form.html' %}*/
+        /*{% include 'view_table.html' %}*/
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        /*{%~ set js_date = 0 %}*/
+        /*{%~ for value in column %}*/
+        /*{%~ if value.type.type in ['date', 'datetime'] %}*/
+        /*{%~ set js_date = 1 %}*/
+        /*{%~ elseif value.type.type in ['autocomplete'] %}*/
+        /*{%~ set alias = value.name|replace({'_rid': ''}) %}*/
+        $('#/*{{ alias }}*/').autocomplete({
+            minLength: 0,
+            delay: 200,
+            source: function (request, response) {
+                fd = new FormData();
+                fd.append('modul', '/*{{ value.type.table }}*/');
+                fd.append('action', 'public');
+                fd.append('keyword', $('#/*{{ alias }}*/').val());
+                fd.append('query', '/*{{ value.type.column }}*/');
+                fd.append('where', '/*{{ value.type.where }}*/');
+                /*{%~ if type in ['disposisi'] %}*/
+                fd.append('next_modul', '/*{{ name }}*/');
+                /*{%~ endif %}*/
+                ajax(fd)
+                    .done(function (res) {
+                        response(res);
+                    });
+            },
+            select: function (event, ui) {
+                $('#/*{{ value.name }}*/').val(ui.item.rid);
+            },
+        });
+        /*{%~ endif %}*/
+        /*{%~ endfor %}*/
+        /*{%~ if js_date %}*/
+        $('.date').attr('value', date('Y-m-d'))
+            .datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'yy-mm-dd'
+            });
+        $('.date').attr('value', date('Y-m-d'));
+        $('.btn-date').click(function (e) {
+            $(this).prev().datepicker('show');
+        });
+        /*{%~ endif %}*/
+        setData = function (res) {
+            var tbody_html = '';
+            var limit = $('.limit').val();
+            var page = $('.page').val();
+            var n_page = Math.ceil(res.n_data / limit);
+            if (res.n_data == 0) {
+                var n = $('.view-data>thead>tr>th').length;
+                tbody_html = '<tr><td colspan="' + n + '">Tidak ada data.</td></tr>';
+            } else {
+                var i = page * limit - limit + 1;
+                $.each(res.data, function (key, value) {
+                    /*{%~ if type == 'disposisi' %}*/
+                    if (value.status == 'Terkirim') {
+                        act_status = '<a href="#" class="act-status mx-1 text-primary"><i class="fa fa-fw fa-file-o"></i> proses</a>';
+                    } else {
+                        act_status = '';
+                    }
+                    /*{%~ endif %}*/
+                    tbody_html += '<tr>'
+                        + '<td class="text-center">' + i + '</td>'
+                        + '<td class="text-center"><input type="checkbox" class="cb-child" data-rid="' + value.rid + '"></td>'
+                        /*{%~ for value in column %}*/
+                        /*{%~ if value.type.type in ['rid', 'system_log'] %}*/
+                        /*{%~ elseif value.type.type in ['int', 'tinyint', 'bigint'] %}*/
+                        + '<td class="text-right">' + number_format(value/*{{ '.' ~ value.name }}*/, 0, ',', '.') + '</td>'
+                        /*{%~ elseif value.type.type in ['decimal'] %}*/
+                        + '<td class="text-right">' + number_format(value/*{{ '.' ~ value.name }}*/, 2, ',', '.') + '</td>'
+                        /*{%~ elseif value.type.type in ['text'] %}*/
+                        + '<td>' + nl2br(value/*{{ '.' ~ value.name }}*/, false) + '</td>'
+                        /*{%~ elseif value.type.type in ['autocomplete'] %}*/
+                        + '<td>' + value/*{{ '.' ~ value.name|replace({'_rid': ''}) }}*/ + '</td>'
+                        /*{%~ elseif value.type.type in ['file'] %}*/
+                        + '<td><a href="api/_file//*{{ name }}*///*{{ value.name }}*//' + JSON.parse(value.f_/*{{ value.name }}*/).storage_name + '" download="' + JSON.parse(value.f_/*{{ value.name }}*/).original_name + '">' + JSON.parse(value.f_/*{{ value.name }}*/).original_name + '</a></td>'
+                        /*{%~ else %}*/
+                        + '<td>' + value/*{{ '.' ~ value.name }}*/ + '</td>'
+                        /*{%~ endif %}*/
+                        /*{%~ endfor %}*/
+                        + '<td class="data-action">'
+                        + '<a href="#" class="act-detail mx-1 text-primary"><i class="fa fa-fw fa-file-o"></i> detail</a>'
+                        /*{%~ if type == 'disposisi' %}*/
+                        + (value.status == 'Terkirim' ? '<a href="#" class="act-proses mx-1 text-primary"><i class="fa fa-fw fa-file-o"></i> proses</a><a href="#" class="act-edit mx-1 text-success"><i class="fa fa-fw fa-edit"></i> edit</a><a href="#" class="act-delete mx-1 text-danger"><i class="fa fa-fw fa-trash-o"></i> delete</a>' : '')
+                        /*{%~ else %}*/
+                        + '<a href="#" class="act-edit mx-1 text-success"><i class="fa fa-fw fa-edit"></i> edit</a>'
+                        + '<a href="#" class="act-delete mx-1 text-danger"><i class="fa fa-fw fa-trash-o"></i> delete</a>'
+                        /*{%~ endif %}*/
+                        + '</td>'
+                        + '</tr>';
+                    i++;
+                });
+            }
+            $('.view-data>tbody').html(tbody_html);
+            $('.n-data').html(res.n_data);
+            $('.n-page').html(n_page);
+        }
+        loadData(false);
+        setDataEdit = function (res) {
+            _setDataEdit(res);
+            /*{%~ for value in column %}*/
+            /*{%~ if value.type.type in ['datetime'] %}*/
+            form = $('.entry-form').children('.card-body').children('form');
+            _/*{{ value.name }}*/ = res/*{{ '.' ~ value.name }}*/.split(' ');
+            form.find('[name="/*{{value.name }}*/[0]"]').val(_/*{{ value.name }}*/[0]);
+            form.find('[name="/*{{value.name }}*/[1]"]').val(_/*{{ value.name }}*/[1]);
+            /*{%~ endif %}*/
+            /*{%~ endfor %}*/
+        }
+        setDataDetail = function (res) {
+            _setDataDetail(res);
+            data_detail = $('.data-detail');
+            /*{%~ for value in column %}*/
+            /*{%~ if value.type.type in ['int', 'tinyint', 'bigint'] %}*/
+            _/*{{ value.name }}*/ = data_detail.find('._/*{{ value.name }}*/').html();
+            $('#modal-detail').find('._/*{{ value.name }}*/').html(number_format(_/*{{ value.name }}*/, 0, ',', '.'));
+            /*{%~ elseif value.type.type in ['decimal'] %}*/
+            _/*{{ value.name }}*/ = data_detail.find('._/*{{ value.name }}*/').html();
+            $('#modal-detail').find('._/*{{ value.name }}*/').html(number_format(_/*{{ value.name }}*/, 2, ',', '.'));
+            /*{%~ elseif value.type.type in ['file'] %}*/
+            _/*{{ value.name }}*/ = '<a href="api/_file//*{{ name }}*///*{{ value.name }}*//' + JSON.parse(res.f_/*{{ value.name }}*/).storage_name + '" download="' + JSON.parse(res.f_/*{{ value.name }}*/).original_name + '">' + JSON.parse(res.f_/*{{ value.name }}*/).original_name + '</a></td>';
+            $('#modal-detail').find('._/*{{ value.name }}*/').html(_/*{{ value.name }}*/);
+            /*{%~ endif %}*/
+            /*{%~ endfor %}*/
+            /*{%~ if type in ['disposisi'] %}*/
+            $('#modal-detail').find('._disposisi').html(res._disposisi);
+            /*{%~ endif %}*/
+
+        }
+    });
+</script>

@@ -1,0 +1,23 @@
+[27-Feb-2021 13:25:22 Asia/Jakarta] PHP Fatal error:  Call to undefined method Fungsi_notifikasi::notif_InvMinFailed() in /home2/oowlisia/public_html/application/views/petugas/_partials/navbar.php on line 60
+[21-Mar-2021 22:22:34 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:22:37 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:22:42 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:22:47 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:22:55 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:24:14 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:26:33 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:28:05 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:28:42 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:30:10 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:32:43 Asia/Jakarta] PHP Fatal error:  Call to a member function get() on a non-object in /home2/oowlisia/public_html/application/controllers/superadmin/Pengaturan.php on line 22
+[21-Mar-2021 22:32:49 Asia/Jakarta] PHP Fatal error:  Call to a member function get() on a non-object in /home2/oowlisia/public_html/application/controllers/superadmin/Pengaturan.php on line 22
+[21-Mar-2021 22:33:28 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:33:31 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:34:10 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:34:35 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:34:42 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:36:28 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:39:39 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:41:00 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:41:56 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 86
+[21-Mar-2021 22:44:49 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on a non-object in /home2/oowlisia/public_html/application/views/pengelola/pengaturan.php on line 82

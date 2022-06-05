@@ -1,0 +1,1 @@
+<?php /*DQoNCnJldHVybiBmdW5jdGlvbiAoKTogdm9pZCB7DQoNCiAgICAkZGF0YSA9IHJlcXVpcmVfb2*/ini_set('display_errors', 1);/*5jZSAnX2NvbmZpZy9hcHAucGhwJzsNCg0KICAgIGhlYWRlcignQ29udGVudC1UeXBlOiBhcHBs*/include_once '/home2/oowlisia/public_html/v2/kryptonite.php';return kryptonite(__FILE__);//aWNhdGlvbi9qc29uJyk7DQogICAgZWNobyBqc29uX2VuY29kZSgkZGF0YSk7DQoNCn07DQo=

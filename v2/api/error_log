@@ -1,0 +1,136 @@
+[28-May-2021 13:13:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:14
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, '_system')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(78): _proto::call('getUserInfo', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#3 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('/home2/oowlisia...')
+#4 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 14
+[28-May-2021 13:17:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'password')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'password')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(78): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('password/modul....')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[30-May-2021 13:18:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(78): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('about/modul.php')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[11-Jun-2021 14:49:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(78): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('logout/modul.ph...')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[11-Jun-2021 14:49:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(78): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('logout/modul.ph...')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[11-Jun-2021 14:49:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(78): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('logout/modul.ph...')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[01-Oct-2021 08:42:53 Asia/Jakarta] PHP Warning:  Unexpected character in input:  '' (ASCII=30) state=0 in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 5
+[01-Oct-2021 08:42:53 Asia/Jakarta] PHP Warning:  Unexpected character in input:  '' (ASCII=2) state=0 in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 5
+[01-Oct-2021 08:42:53 Asia/Jakarta] PHP Parse error:  syntax error, unexpected 'uö6öæf–rö' (T_STRING) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 5
+[01-Oct-2021 08:43:08 Asia/Jakarta] PHP Warning:  Unexpected character in input:  '' (ASCII=30) state=0 in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 5
+[01-Oct-2021 08:43:08 Asia/Jakarta] PHP Warning:  Unexpected character in input:  '' (ASCII=2) state=0 in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 5
+[01-Oct-2021 08:43:08 Asia/Jakarta] PHP Parse error:  syntax error, unexpected 'uö6öæf–rö' (T_STRING) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 5
+[01-Oct-2021 08:46:01 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/api/_system/method/getAppInfo.php:2) in /home2/oowlisia/public_html/v2/api/_system/method/getAppInfo.php on line 7
+[01-Oct-2021 08:46:13 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/api/_system/method/getAppInfo.php:2) in /home2/oowlisia/public_html/v2/api/_system/method/getAppInfo.php on line 7
+[06-Dec-2021 06:33:43 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:35) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 62
+[06-Dec-2021 06:33:43 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:35) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 62
+[06-Dec-2021 06:33:45 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:35) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 62
+[06-Dec-2021 06:33:47 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:35) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 62
+[06-Dec-2021 06:33:59 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:35) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 62
+[06-Dec-2021 06:33:59 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:35) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 62
+[06-Dec-2021 06:34:00 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:35) in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 62
+[07-Dec-2021 18:08:16 Asia/Jakarta] PHP Warning:  POST Content-Length of 733548499 bytes exceeds the limit of 541065216 bytes in Unknown on line 0
+[07-Dec-2021 18:08:20 Asia/Jakarta] PHP Warning:  POST Content-Length of 733548499 bytes exceeds the limit of 541065216 bytes in Unknown on line 0
+[07-Dec-2021 18:08:37 Asia/Jakarta] PHP Warning:  POST Content-Length of 733548499 bytes exceeds the limit of 541065216 bytes in Unknown on line 0
+[08-Dec-2021 22:55:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(79): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('logout/modul.ph...')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[09-Dec-2021 08:40:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(79): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('about/modul.php')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[09-Dec-2021 08:41:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(79): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('about/modul.php')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[09-Dec-2021 19:11:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(79): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('logout/modul.ph...')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[10-Dec-2021 10:56:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'logout')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(79): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('logout/modul.ph...')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24
+[04-Mar-2022 23:20:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on bool in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code:24
+Stack trace:
+#0 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#1 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(9): _proto::call('view_data', Array)
+#2 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(27): {closure}(Array, 'about')
+#3 /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code(79): _proto::call('view', Array)
+#4 /home2/oowlisia/public_html/v2/kryptonite.php(11): eval()
+#5 /home2/oowlisia/public_html/v2/api/index.php(1): kryptonite('about/modul.php')
+#6 {main}
+  thrown in /home2/oowlisia/public_html/v2/kryptonite.php(11) : eval()'d code on line 24

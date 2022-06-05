@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php $this->load->view("petugas/_partials/head.php") ?>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <?php $this->load->view("petugas/_partials/navbar.php")?>
+        <!-- Content Wrapper. Contains page content -->
+        <?php $this->load->view("petugas/_partials/sidebar.php")?>
+
+        <div class="content-wrapper">
+        <?php $this->load->view("petugas/_partials/breadcrumb.php")?>
+
+        
+            <section class="content">
+                <div class="container-fluid" style="max-width: 100%;">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="card">
+ 
+                        <div class="card-body">
+                        <a href="<?=base_url('order/neworder')?>"><button class="btn btn-success mb-4"> <i class="fas fa-home"></i> Back</button></a>
+                            <div class="row">
+                                
+                               
+                                <div class="col-12 col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header bg-dark">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="card-title">Upload JobDesc</div>
+                                            <div id="waktuTimeout" class="card-title"></div>
+                                        </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                     
+                                            <form action="" id="formAdd">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="quoDetailID" class="form-control" id="quoDetailID" value="<?=$row->jobdA_quoDetailID?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">NO JOBDESC</label>
+                                                    <input type="hidden" name="jobdID" id="jobdID" class="form-control jobdID"  value="<?=$row->jobdApprovID?>">
+                                                    <input type="text" name="jobdNo" id="jobdNo" class="form-control jobdNo"  value="<?=$row->jobdApprovNo?>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Nama Bidang</label>
+                                                    <input type="hidden" name="bidangID" id="bidangID" class="form-control bidangID"  value="<?=$row->jobdA_bidangID?>">
+                                                    <input type="text" name="bidangNama" id="bidangNama" class="form-control bidangNama"  value="<?=$rowbidang?>">
+                                                    
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">File Quotation</label>
+                                                    <input type="file" name="jobdFile" class="form-control jobdFile" id="jobdFile">
+                                                    <span class="jobdFile_error text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Comment</label>
+                                                    <textarea name="jobdComment" id="" class="form-control" cols="10" rows="5"></textarea>
+                                                </div>
+                                                <button type="submit" id="add" name="add" class="btn btn-primary">Submit</button>
+                                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                               
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                          
+                    </div>
+                    <!-- /.row (main row) -->
+                </div><!-- /.container-fluid -->
+            </section>
+
+        </div>
+
+
+        
+
+     
+
+        <!-- /.content-wrapper -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Main Footer -->
+        <?php $this->load->view("petugas/_partials/footer.php") ?>
+    
+    </div>
+<!-- ./wrapper -->
+
+<!-- Javascript -->
+<?php $this->load->view("petugas/_partials/js.php") ?>
+
+
+<script>
+$(document).ready(function(){
+
+    $('#add').on('click', function(e){
+        $('.jobdID_error').empty();  
+        $('.jobdFile_error').empty();
+        e.preventDefault();
+
+        var myformData = new FormData(); 
+        // myformData.append('send_up', $("#send_up").val());
+        
+        myformData.append('jobdID', $("#jobdID").val());
+        myformData.append('quoDetailID', $("#quoDetailID").val());
+        myformData.append('bidangID', $("#bidangID").val());
+        myformData.append('jobdFile', $('#jobdFile')[0].files[0]);
+
+        console.log("Data Di Klik");
+      
+
+      
+        $.ajax({
+            type : "POST",
+            url  :"<?php echo base_url('WorkflowJobdesc/saveJobDescFile')?>",
+            dataType : "JSON",
+            data : myformData,
+            contentType: false,
+            processData: false,
+            cache: false,
+            enctype: 'multipart/form-data',
+            
+            success: function(response){
+                console.log(response);
+                if(response.status == 'success'){
+                    $('.jobdID').html("");
+                    $('.jobdFile').html("");
+                    
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        text: 'Data Berhasil Di Kirim!',
+                    }).then(function() {
+                        window.location.assign("<?php echo base_url();?>WorkflowQuotation/viewNewQuo");
+                    });
+                   
+                   
+                } else if(response.status == 'error-upload'){
+                    $('.jobdFile_error').html(response.jobdFile);
+                }
+                else{
+                    console.log(response);
+                    $('.jobdID_error').html(response.jobdID);
+                    $('.jobdFile_error').html(response.jobdFile);
+                    
+                    
+                }   
+            }
+        }).fail(function(response){
+            console.log(response);
+        });
+
+       
+        return false;
+    });
+
+
+
+        //Waktu Pengerjaan
+        var set = setInterval(getTimeOut, 1000);
+    function getTimeOut(){
+        var id = $('#quoDetailID').val();
+        console.log(id);
+        $.ajax({
+            type : "GET",
+            url  : "<?php echo base_url('WorkflowQuotation/timeViewMarine')?>",
+            dataType : "JSON",
+            data : {id:id},
+            success: function(data){
+                console.log(data);
+                $('#status').text(data.status);
+                if(data.statusAll == 'reject'){
+                    clearInterval(set);
+                    $('#waktuTimeout').html('<span class="text-danger">Waktu Selesai</span>');
+                    $('#action').hide();
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Data Reject!',
+                        text: 'Data ini telah di Reject',
+                        allowOutsideClick: false,
+                        allowEscapeKey: false
+                    }).then(function(){
+                        window.location.assign("<?php echo base_url();?>petugas/petugasDashboard/");   
+                    });
+                }else{
+                        var now         = new Date().getTime();
+                        var waktuEnd    = new Date(data.waktuEnd).getTime();
+                        var time        = now-waktuEnd;
+                        var diff_time   = Math.abs(time);
+                        var minutes = Math.floor((diff_time % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((diff_time % (1000 * 60)) / 1000);
+                        document.getElementById("waktuTimeout").innerHTML = minutes + " Menit " + seconds + " Detik ";
+
+                        if(now > waktuEnd){
+                            $('#status').text(data.status);
+                            $('#waktuTimeout').html('<span class="text-danger">Waktu Selesai</span>');
+                        }
+                    
+                }
+            }
+        });
+    }
+
+
+    
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>
